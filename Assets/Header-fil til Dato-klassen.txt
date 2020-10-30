@@ -1,0 +1,27 @@
+class Dato
+{
+public:
+	DONE - Dato();
+	DONE - Dato(int);
+	DONE - int getDatoen();
+	DONE - int getAar();
+	DONE - int getMaaned();
+	DONE - int getDag();
+	DONE - int getKvartal();
+	DONE - void setAar(int);
+	DONE - void setMaaned(int);
+	DONE - void setDag(int);
+	DONE - bool skudAar();
+	DONE - bool validDato();	// 20201711 er fx ikke valid
+	DONE - int dagIAar();		// 10. februar er fx årets 41. dag
+	DONE - int restDageIAar();	// 25. november resterer der 36 dage i året 
+	DONE - void setDatoPlusEn();	// 20191231 bliver til 20200101
+	DONE - void setDatoMinusEn();  // 20191101 bliver til 20191031
+	DONE - void setNyDato(int);	// Kaldt med 27 bliver 19991217 til 20000113
+	DONE - int forskelIDage(Dato);	// Forskellen mellem 19630107 og 20200914 er 21070 
+	int ugeDag();		// Hvis datoen er en mandag returneres 1, tirsdag 2, etc.
+	~Dato();
+private:
+	int datoen = 0;
+};
+
