@@ -23,7 +23,7 @@ public class StringTokenizer {
     }
 
     public boolean isDelimiter(char tegn) {
-        System.out.println(delim.indexOf(tegn));
+        //System.out.println(delim.indexOf(tegn));
         if (delim.indexOf(tegn) == -1)
             return false;
         else
@@ -31,9 +31,10 @@ public class StringTokenizer {
     }
 
     public boolean hasMoreTokens(int index){
-            if (index < (tekst.length()-1)) {
+        indeks = index;
+            if (indeks < (tekst.length()-1)) {
                 return true;
-            } else if (index == (tekst.length())) {
+            } else if (indeks == (tekst.length())) {
                 if (!isDelimiter(tekst.charAt(index))){
                     return true;
                 }
@@ -42,7 +43,21 @@ public class StringTokenizer {
         }
 
     public String nextToken() {
-        return "";
+        String token = "";
+        if (!hasMoreTokens(indeks)){
+            return "";
+        } else {
+            for (int i = indeks; i < tekst.length(); i++) {
+                if (!isDelimiter(tekst.charAt(i))){
+                    token += tekst.charAt(i);
+                }
+                else if (isDelimiter(tekst.charAt(i)) && token.length() > 0){
+                    indeks = i;
+                    break;
+                }
+            }
+        }
+        return token;
     }
 
     public String nextToken(String delimiters) {
