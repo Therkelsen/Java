@@ -2,10 +2,10 @@
 public class Forbruger {
 
     String navn;
-    int maalerNr;   // Mellem 000 og 200
+    int maalerNr;   // Mellem 000 og 1000
     int nyAflaesning;
     int forrigeLaesning;
-    int maalerMax;  // 
+    int maalerMax;
 
     public Forbruger() {
     }
@@ -34,7 +34,6 @@ public class Forbruger {
     }
 
     public int beregnForbrug() {
-    
         if (nyAflaesning < forrigeLaesning) {
             return maalerMax + nyAflaesning - forrigeLaesning;
         } else {
