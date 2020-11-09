@@ -1,4 +1,6 @@
 
+package javalearning;
+
 public class Dato {
 
     public int date;
