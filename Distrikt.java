@@ -1,3 +1,6 @@
+
+package javalearning;
+
 public class Distrikt {
 
     String navn;

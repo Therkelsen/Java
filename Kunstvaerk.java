@@ -15,7 +15,7 @@ public abstract class Kunstvaerk {
     }
 
     public void addOphavsmand(Person ophavsmand) {
-        this.ophavsmaend[ophavsmaend.length] = ophavsmand;
+        this.ophavsmaend[ophavsmaend.length - 1] = ophavsmand;
     }
 
 }

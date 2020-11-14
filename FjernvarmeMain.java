@@ -1,4 +1,6 @@
 
+package javalearning;
+
 public class FjernvarmeMain {
     public static void main(String[] args) {
         Forbruger forbruger1 = new Forbruger("Søren", 69, 200);
