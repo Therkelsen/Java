@@ -2,9 +2,9 @@
 package javalearning;
 
 public abstract class Kunstvaerk {
-    private String titel;
-    private int aar;
-    private Person[] ophavsmaend = new Person[5];
+    protected String titel;
+    protected int aar;
+    protected Person[] ophavsmaend = new Person[5];
 
     public Kunstvaerk(){
     }

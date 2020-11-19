@@ -5,8 +5,8 @@ import Dato;
 
 public abstract class Husdyr {
 
-    private String navn;
-    private String livret;
+    protected String navn;
+    protected String livret;
 
     public Husdyr() {
     }
