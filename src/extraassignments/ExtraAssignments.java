@@ -1,6 +1,8 @@
 
 package src.extraassignments;
 
+import java.util.Arrays;
+
 public class ExtraAssignments {
     // 45^2 = 2025
     // 20 + 25 = 45
@@ -101,6 +103,23 @@ public class ExtraAssignments {
     }
 
     public static boolean sumOfTwoEqualsThird(int arr[]) {
+        System.out.println();
+        System.out.println("Assignment 4");
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+            if (arr[i] <= 0) {
+                System.out.println("Array contains a number less than 1");
+                return false;
+            } else if (i < arr.length - 2) {
+                if (arr[i] + arr[i + 1] == arr[i + 2]) {
+                    System.out.println("yes");
+                    return true;
+                }
+            }
+            
+        }
+
         return true;
     }
 }

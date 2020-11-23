@@ -93,10 +93,10 @@ public class OpgaverMedArrays
     
     public static void printMatrix(int[][] m)
     {
-         for (int i = 0; i < m.length; i++)
+        for (int i = 0; i < m.length; i++)
             for (int j = 0; j < m[0].length; j++)
                 System.out. print(m[i][j] + " ");
-         System.out.println("\nLength "+m.length+" Width "+m[0].length);
+        System.out.println("\nLength "+m.length+" Width "+m[0].length);
     }
     
     public static void main(String[] args)

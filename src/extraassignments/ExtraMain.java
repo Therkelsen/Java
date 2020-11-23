@@ -7,5 +7,6 @@ public class ExtraMain {
         ExtraAssignments.Assignment1();
         ExtraAssignments.Assignment2();
         ExtraAssignments.neighbors("abc");
+        ExtraAssignments.sumOfTwoEqualsThird(new int[] {11,22,11});
     }
 }
