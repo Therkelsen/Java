@@ -32,8 +32,7 @@ public class ExtraAssignments {
 
                 if (i1 + i2 == i) {
                     System.out.println(
-                            "Number = [" + iStr + "] Square = [" + iSqr + "] Number 2 = [" + iStr1 + "] Number 3 = ["
-                            + iStr2 + "] [" + i1 + "] + [" + i2 + "] = [" + iStr + "]?: " + (i1 + i2 == i));
+                            "Number = [" + iStr + "] Square = [" + iSqr + "] | [" + i1 + "] + [" + i2 + "] = [" + iStr + "]?: " + (i1 + i2 == i));
                 }
             }
         }
@@ -52,34 +51,32 @@ public class ExtraAssignments {
             int i3 = 0;
             switch (iStr.length()) {
                 case 1:
-                    iStr1 = String.valueOf(i);
-                    i1 = i;
+                    iStr1 = String.valueOf(iStr);
                     if (i1 == i) {
                         System.out.println(
-                                "Number = [" + i + "] Number 2 = [" + i1 + "] " + i1 + "¹ = " + i + "?: " + (i1 == i));
+                                "Number = [" + i + "] | [" + i1 + "¹] = [" + i + "]?: " + (i1 == i));
                     }
                     break;
 
                 case 2:
-                    iStr1 = String.valueOf(iStr.charAt(0));
-                    iStr2 = String.valueOf(iStr.charAt(1));
+                    iStr1 = iStr.substring(0, 1);
+                    iStr2 = iStr.substring(1, 2);
                     i1 = Integer.parseInt(iStr1);
                     i2 = Integer.parseInt(iStr2);
                     if (i1 + Math.pow(i2, 2) == i) {
-                        System.out.println(i);
+                        System.out.println("Number = [" + i + "] | [" + i1 + "¹] + [" + i2 + "²] = [" + i + "]?: " + (i1 + Math.pow(i2, 2) == i));
                     }
                     break;
 
                 case 3:
-                    iStr1 = String.valueOf(iStr.charAt(0));
-                    iStr2 = String.valueOf(iStr.charAt(1));
-                    iStr3 = String.valueOf(iStr.charAt(2));
+                    iStr1 = iStr.substring(0, 1);
+                    iStr2 = iStr.substring(1, 2);
+                    iStr3 = iStr.substring(2, 3);
                     i1 = Integer.parseInt(iStr1);
                     i2 = Integer.parseInt(iStr2);
-                    i2 = Integer.parseInt(iStr3);
-                    System.out.println("Number = " + i + " " + (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i));
+                    i3 = Integer.parseInt(iStr3);
                     if (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i) {
-                        System.out.println("true");
+                        System.out.println("Number = [" + i + "] | [" + i1 + "¹] + [" + i2 + "²] + [" + i3 + "³] = [" + i + "]?: " + (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i));
                     }
                     break;
 
@@ -89,5 +86,21 @@ public class ExtraAssignments {
             }
 
         }
+    }
+
+    public static boolean neighbors(String s) {
+        System.out.println();
+        System.out.println("Assignment 3");
+        String alpha = "abcdefghijklmnopqrstuvwxyz";
+            if (!alpha.contains(s)) {
+                System.out.println("Alphabet contains: [" + s + "]?: " + alpha.contains(s));
+                return false;
+            }
+        System.out.println("Alphabet contains: [" + s + "]?: " + alpha.contains(s));
+        return true;
+    }
+
+    public static boolean sumOfTwoEqualsThird(int arr[]) {
+        return true;
     }
 }

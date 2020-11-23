@@ -5,7 +5,7 @@ public class ExtraMain {
     public static void main(String[] args) {
 
         ExtraAssignments.Assignment1();
-        // ExtraAssignments.Assignment2();
-
+        ExtraAssignments.Assignment2();
+        ExtraAssignments.neighbors("abc");
     }
 }
