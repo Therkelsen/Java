@@ -11,27 +11,29 @@ public class ExtraAssignments {
             String iStr = String.valueOf(i);
 
             String iSqr = String.valueOf(i * i);
-            
-            if(iSqr.length() >= 2) {
-                String iStr1 = iSqr.substring(0, iSqr.length()/2);
-                String iStr2 = iSqr.substring(iSqr.length()/2, iSqr.length());
+
+            if (iSqr.length() >= 2) {
+                String iStr1 = iSqr.substring(0, iSqr.length() / 2);
+                String iStr2 = iSqr.substring(iSqr.length() / 2, iSqr.length());
                 int i1 = 0;
                 int i2 = 0;
 
-                try{
+                try {
                     i1 = Integer.parseInt(iStr1);
-                } catch(NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Can't parse " + iStr1);
                 }
-                
-                try{
+
+                try {
                     i2 = Integer.parseInt(iStr2);
-                } catch(NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Can't parse " + iStr2);
                 }
-                
-                if(i1 + i2 == i) {
-                    System.out.println("Number = [" + iStr + "] Square = [" + iSqr + "] Number 2 = [" + iStr1 + "] Number 3 = [" + iStr2 + "] [" + i1 + "] + [" + i2 + "] = [" + iStr + "] ?: " + (i1 + i2 == i));
+
+                if (i1 + i2 == i) {
+                    System.out.println(
+                            "Number = [" + iStr + "] Square = [" + iSqr + "] Number 2 = [" + iStr1 + "] Number 3 = ["
+                            + iStr2 + "] [" + i1 + "] + [" + i2 + "] = [" + iStr + "]?: " + (i1 + i2 == i));
                 }
             }
         }
@@ -50,41 +52,41 @@ public class ExtraAssignments {
             int i3 = 0;
             switch (iStr.length()) {
                 case 1:
-                iStr1 = String.valueOf(i);
-                i1 = i;
-                if (i1 == i) {
-                    System.out.println("Number = [" + i + "] Number 2 = [" + i1 + "] " + i1 + "¹ = " + i + "?: " + (i1 == i));
-                }
-                break;
+                    iStr1 = String.valueOf(i);
+                    i1 = i;
+                    if (i1 == i) {
+                        System.out.println(
+                                "Number = [" + i + "] Number 2 = [" + i1 + "] " + i1 + "¹ = " + i + "?: " + (i1 == i));
+                    }
+                    break;
 
                 case 2:
-                iStr1 = String.valueOf(iStr.charAt(0));
-                iStr2 = String.valueOf(iStr.charAt(1));
-                i1 = Integer.parseInt(iStr1);
-                i2 = Integer.parseInt(iStr2);
-                if (i1 + Math.pow(i2, 2) == i) {
-                    System.out.println(i);
-                }
-                break;
+                    iStr1 = String.valueOf(iStr.charAt(0));
+                    iStr2 = String.valueOf(iStr.charAt(1));
+                    i1 = Integer.parseInt(iStr1);
+                    i2 = Integer.parseInt(iStr2);
+                    if (i1 + Math.pow(i2, 2) == i) {
+                        System.out.println(i);
+                    }
+                    break;
 
                 case 3:
-                iStr1 = String.valueOf(iStr.charAt(0));
-                iStr2 = String.valueOf(iStr.charAt(1));
-                iStr3 = String.valueOf(iStr.charAt(2));
-                i1 = Integer.parseInt(iStr1);
-                i2 = Integer.parseInt(iStr2);
-                i2 = Integer.parseInt(iStr3);
-                System.out.println("Number = " + i + " " + (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i));
-                if (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i) {
-                    System.out.println("true");
-                }
-                break;
+                    iStr1 = String.valueOf(iStr.charAt(0));
+                    iStr2 = String.valueOf(iStr.charAt(1));
+                    iStr3 = String.valueOf(iStr.charAt(2));
+                    i1 = Integer.parseInt(iStr1);
+                    i2 = Integer.parseInt(iStr2);
+                    i2 = Integer.parseInt(iStr3);
+                    System.out.println("Number = " + i + " " + (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i));
+                    if (i1 + Math.pow(i2, 2) + Math.pow(i3, 3) == i) {
+                        System.out.println("true");
+                    }
+                    break;
 
                 default:
-                break;
+                    break;
 
             }
-
 
         }
     }
