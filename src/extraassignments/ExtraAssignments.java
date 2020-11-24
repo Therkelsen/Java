@@ -105,21 +105,20 @@ public class ExtraAssignments {
     public static boolean sumOfTwoEqualsThird(int arr[]) {
         System.out.println();
         System.out.println("Assignment 4");
-        Arrays.sort(arr);
         for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-            if (arr[i] <= 0) {
-                System.out.println("Array contains a number less than 1");
+            if(arr[i] == i) {
+                System.out.println("Array contains value below one");
                 return false;
-            } else if (i < arr.length - 2) {
-                if (arr[i] + arr[i + 1] == arr[i + 2]) {
-                    System.out.println("yes");
-                    return true;
-                }
             }
-            
+                for (int j = 0; i < arr.length; j++) {
+                    for (int k = 0; i < arr.length; k++) {
+                        if (arr[i] + arr[j] == arr[k]) {
+                            System.out.println("[" + i + "] + [" + j + "] = [" + k + "]");
+                            return true;
+                        }
+                    }
+                }
         }
-
-        return true;
+        return false;
     }
 }
