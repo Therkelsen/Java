@@ -15,4 +15,8 @@ public class Bog extends Kunstvaerk {
         this.antalSider = antalSider;
     }
     
+    public int getAntalSider() {
+        return this.antalSider;
+    }
+
 }

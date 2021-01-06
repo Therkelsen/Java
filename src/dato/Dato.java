@@ -24,6 +24,8 @@ public class Dato {
         year = aYear * 10000;
         month = aMonth * 100;
         day = aDay;
+        
+        date = aYear*10000 + aMonth * 100 + aDay;
     }
 
     public int getDato() {
@@ -35,15 +37,15 @@ public class Dato {
     }
 
     public int getMonth() {    // * should return M
-        return date % 10000 / 100;
+        return date / 100 % 100;
     }
 
     public int getDay() {   // * should return D
         return date % 100;
     }
 
-    public int getQuarter() {   // * should return Q
-        return ((getMonth()-1)/3)+1;
+    public int getQuarter() {   // * SAOL method for returning Q
+        return ((getMonth() - 1) / 3) + 1;
     }
 
     public int altGetQuarter() {   // * alternate way of returning Q
@@ -201,53 +203,34 @@ public class Dato {
         for (int i = 1; i <= x; i++) {
             dateAddOne();
         }
+        System.out.println("New date = " + getDato());
     }
 
-    public int dateSubDate(int subDate) {
-        
-        int prevYear = year;
-        int prevDate = date;
-        
-        int date = subDate;
-        int days = 0;
+    public int dateSubDate(Dato enDato)
+    {
+        int daysBetween = 0;
 
-        if (validDate()) {
-            getMonth();
-            getYear();
+        Dato tempDate = new Dato();
+        tempDate.date = date;
 
-            if (year != prevYear) {
-                for (int y = year; y < prevYear; y++) {
-                    days += dayInYear();
-                }
-            } else {
-                days = 365 - dayInYear();
+        if (tempDate.date < enDato.date) {
+            while(tempDate.date != enDato.date) {
+                tempDate.dateAddOne();
+                daysBetween++;
             }
         }
-
-        date = prevDate;
-
-        return days;
-    }
-
-    public int altDateSubDate(Dato aDate) {
-        int days = 0;
-
-        Dato oldDate = new Dato();
-        oldDate.date = date;
-
-        if (oldDate.date < aDate.date) {
-            while(oldDate.date != aDate.date) {
-                oldDate.dateSubOne();
-                days++;
+        else
+        if (tempDate.date > enDato.date) {
+            while(tempDate.date != enDato.date) {
+                tempDate.dateSubOne();
+                daysBetween--;
             }
         }
-        else if (oldDate.date > aDate.date) {
-            while(oldDate.date != aDate.date) {
-                oldDate.dateSubOne();
-                days--;
-            }
+        if (daysBetween < 0) {
+            return daysBetween * -1;
+        } else {
+            return daysBetween;
         }
-        return days;
     }
 
     public String dayOfWeek(int d) {
@@ -291,7 +274,7 @@ public class Dato {
         }
     }
 
-    public void print() {
+    public void print(Dato subdate) {  // * Input which date to subtract
         System.out.println();
 
         System.out.println("Input: " + getDato());
@@ -306,7 +289,7 @@ public class Dato {
             System.out.println("Leap year: " + leapYear());
             System.out.println("Day in year: " + dayInYear());
             System.out.println("Remaining days in year: " + remainingDaysInYear());
-            System.out.println("Days between: " + dateSubDate(20001219));
+            System.out.println("Days between " + getDay() + "/" + getMonth() + "/" + getYear() + " and " + subdate.getDay() + "/" + subdate.getMonth() + "/" + subdate.getYear() + " = " + dateSubDate(subdate));
             System.out.println("Day of the week: " + dayOfWeek(date));
         } else {
             System.out.println("Date is invalid - Can not process");

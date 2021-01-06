@@ -3,10 +3,10 @@ package src.forbruger;
 
 public class Distrikt {
 
-    String navn;
-    float prisPrM3;
-    Forbruger[] forbrugere = new Forbruger[200];
-    int antalForbrugere = 0;
+    private String navn;
+    private float prisPrM3;
+    private Forbruger[] forbrugere;
+    private int antalForbrugere;
 
     public Distrikt() {
     }
@@ -14,11 +14,15 @@ public class Distrikt {
     public Distrikt(String etNavn, float enPrisPrM3) {
         navn = etNavn;
         prisPrM3 = enPrisPrM3;
+        forbrugere = new Forbruger[200];
+        antalForbrugere = 0;
     }
 
     void setForbruger(Forbruger enForbruger) {
-        forbrugere[antalForbrugere] = enForbruger;
-        antalForbrugere++;
+        if (antalForbrugere < 200) {
+            forbrugere[antalForbrugere] = enForbruger;
+            antalForbrugere++;
+        }
     }
 
     float afregnForbruger(int etMaalerNr) {

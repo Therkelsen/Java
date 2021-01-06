@@ -13,5 +13,9 @@ public class Museum {
         this.navn = navn;
         this.adresse = adresse;
     }
+
+    public String getNavn() {
+        return navn;
+    }
     
 }

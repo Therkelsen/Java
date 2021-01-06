@@ -3,9 +3,9 @@ package src.kunstvaerk;
 
 public class Maleri extends Kunstvaerk {
 
-    private int laengde;
-    private int bredde;
-    private Museum museum;
+    protected int laengde;
+    protected int bredde;
+    protected Museum museum;
 
     public Maleri() {
     }
@@ -16,5 +16,8 @@ public class Maleri extends Kunstvaerk {
         this.bredde = bredde;
         this.museum = museum;
     }
-    
+
+    public String getNavnPaaMuseum() {
+        return this.museum.getNavn();
+    }
 }

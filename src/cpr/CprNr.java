@@ -22,16 +22,16 @@ public class CprNr {
     }
 
     public int getDag() {
-        return GetSectionFromString(nummeret, 0, 2);
+        return getSectionFromString(nummeret, 0, 2);
     }
 
     public int getMaaned() {
-        return GetSectionFromString(nummeret, 2, 2);
+        return getSectionFromString(nummeret, 2, 2);
     }
     
     public int getAar() {
-        int x = GetSectionFromString(nummeret, 4, 2);
-        int y = GetSectionFromString(nummeret, 6, 1);
+        int x = getSectionFromString(nummeret, 4, 2);
+        int y = getSectionFromString(nummeret, 6, 1);
         int z = 0;
         
         if (y >= 0 && y <= 3) {
@@ -54,11 +54,11 @@ public class CprNr {
     }
 
     public boolean erMand() {
-        return GetSectionFromString(nummeret, 9, 1) % 2 != 0;
+        return getSectionFromString(nummeret, 9, 1) % 2 != 0;
     }
 
     public boolean erKvinde() {
-        return GetSectionFromString(nummeret, 9, 1) % 2 == 0;
+        return !erMand();
     }
 
     public boolean erValid() {
@@ -72,7 +72,7 @@ public class CprNr {
             }
 
             for (int i = 0; i > 10; i++) {  //  Gange alle ciffere med sin respektive vægt
-                int b = GetSectionFromString(nummeret, i+1, 1);
+                int b = getSectionFromString(nummeret, i+1, 1);
 
                 switch (b) {
                     case 1:
@@ -134,7 +134,7 @@ public class CprNr {
     }
 
     // Ekstra metoder som ikke er en del af opgaven, men som gør koden mere overskuelig
-    private int GetSectionFromString(String input, int index, int take) {
+    private int getSectionFromString(String input, int index, int take) {
         // Deler en String op i små bidder ud fra String, ens index og hvor mange ciffere man vil have
         return Integer.parseInt(input.substring(index, index + take));
     }
