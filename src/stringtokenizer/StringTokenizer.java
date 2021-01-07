@@ -30,7 +30,6 @@ public class StringTokenizer {
     }
 
     public boolean isDelimiter(char tegn) {
-        //System.out.println(delim.indexOf(tegn));
         for (int i = 0; i < delim.length(); i++) {
             if (tegn == delim.charAt(i)) {
                 return true;
@@ -39,14 +38,14 @@ public class StringTokenizer {
         return false;
     }
 
-        public boolean hasMoreTokens(){
-            for (int i = indeks; i < tekst.length(); i++) {
-                if (!isDelimiter(tekst.charAt(i))) {
-                    return true;
-                }
+    public boolean hasMoreTokens(){
+        for (int i = indeks; i < tekst.length(); i++) {
+            if (!isDelimiter(tekst.charAt(i))) {
+                return true;
             }
-            return false;
         }
+        return false;
+    }
 
     public String nextToken() {
         String token = "";

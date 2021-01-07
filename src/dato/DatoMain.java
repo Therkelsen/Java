@@ -5,9 +5,9 @@ public class DatoMain {
         Dato dc = new Dato(20201031);
         dc.print(new Dato(20200801));
         
-        dc.setYear(2019);
-        dc.setMonth(11);
-        dc.setDay(30);
+        dc.setYear(2012);
+        dc.setMonth(12);
+        dc.setDay(19);
         
         dc.print(new Dato(20200801));
 

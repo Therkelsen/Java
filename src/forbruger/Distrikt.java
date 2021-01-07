@@ -11,16 +11,16 @@ public class Distrikt {
     public Distrikt() {
     }
 
-    public Distrikt(String etNavn, float enPrisPrM3) {
-        navn = etNavn;
-        prisPrM3 = enPrisPrM3;
+    public Distrikt(String navn, float prisPrM3) {
+        this.navn = navn;
+        this.prisPrM3 = prisPrM3;
         forbrugere = new Forbruger[200];
         antalForbrugere = 0;
     }
 
-    void setForbruger(Forbruger enForbruger) {
+    void setForbruger(Forbruger forbruger) {
         if (antalForbrugere < 200) {
-            forbrugere[antalForbrugere] = enForbruger;
+            forbrugere[antalForbrugere] = forbruger;
             antalForbrugere++;
         }
     }

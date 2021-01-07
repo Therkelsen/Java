@@ -9,16 +9,16 @@ public class CprNr {
     public CprNr() {
     }
 
-    public CprNr(String etCprNr) {
-        nummeret = etCprNr;
+    public CprNr(String nummeret) {
+        this.nummeret = nummeret;
     }
 
     public String getCprNr() {
         return nummeret;
     }
 
-    public void setCprNr(String etCprNr) {
-        nummeret = etCprNr;
+    public void setCprNr(String nummeret) {
+        this.nummeret = nummeret;
     }
 
     public int getDag() {
@@ -50,7 +50,7 @@ public class CprNr {
     }
 
     public int getAlder() { // Antager at det nuværende år er 2020
-        return 2020 - getAar();
+        return 2021 - getAar();
     }
 
     public boolean erMand() {

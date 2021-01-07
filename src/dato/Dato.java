@@ -3,7 +3,7 @@ package src.dato;
 
 public class Dato {
 
-    public int date;
+    private int date;
     private int year;
     private int month;
     private int day;
@@ -12,12 +12,11 @@ public class Dato {
     private boolean valid;
 
     // Constructor
-
     public Dato() {
     }
 
-    public Dato(int aDate) { //  * Takes date input
-        date = aDate;
+    public Dato(int date) { //  * Takes date input
+        this.date = date;
     }
 
     public Dato(int aYear, int aMonth, int aDay) {
@@ -206,12 +205,10 @@ public class Dato {
         System.out.println("New date = " + getDato());
     }
 
-    public int dateSubDate(Dato enDato)
-    {
+    public int dateSubDate(Dato enDato) {
         int daysBetween = 0;
 
-        Dato tempDate = new Dato();
-        tempDate.date = date;
+        Dato tempDate = new Dato(date);
 
         if (tempDate.date < enDato.date) {
             while(tempDate.date != enDato.date) {

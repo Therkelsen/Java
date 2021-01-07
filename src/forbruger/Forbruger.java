@@ -12,18 +12,18 @@ public class Forbruger {
     public Forbruger() {
     }
 
-    public Forbruger(String etNavn, int etMaalerNr, int etMaalerMax) {
-        navn = etNavn;
-        maalerNr = etMaalerNr;
-        maalerMax = etMaalerMax;
+    public Forbruger(String navn, int maalerNr, int maalerMax) {
+        this.navn = navn;
+        this.maalerNr = maalerNr;
+        this.maalerMax = maalerMax;
     }
 
     public int getMaalerNr() {
         return maalerNr;
     }
 
-    public void setNavn(String etNavn) {
-        navn = etNavn;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
 
     public String getNavn() {
