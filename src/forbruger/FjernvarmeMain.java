@@ -3,19 +3,26 @@ package src.forbruger;
 
 public class FjernvarmeMain {
     public static void main(String[] args) {
-        Forbruger forbruger1 = new Forbruger("Søren", 69, 200);
-        Forbruger forbruger2 = new Forbruger("Ikke Søren", 70, 200);
-        Distrikt distrikt = new Distrikt("Rosengårdcentret", 6000);
-        forbruger1.setNavn("Tonni");
-        forbruger2.setNavn("Ikke Tonni");
-        distrikt.setForbruger(forbruger1);
-        distrikt.setForbruger(forbruger2);
+        Forbruger soeren = new Forbruger("Søren", 65, 200);
+        Forbruger rikke = new Forbruger("Rikke", 70, 200);
+        Distrikt jernbanegade = new Distrikt("Jernbanegade", (float) 30);
+        
+        soeren.aflaesMaaler(200);
+        soeren.aflaesMaaler(50);
 
-        forbruger1.aflaesMaaler(0);
-        forbruger1.aflaesMaaler(200);
-        forbruger2.aflaesMaaler(0);
-        forbruger2.aflaesMaaler(190);
+        rikke.aflaesMaaler(0);
+        rikke.aflaesMaaler(190);
 
-        distrikt.print();
+        jernbanegade.setForbruger(soeren);
+        jernbanegade.setForbruger(rikke);
+
+        System.out.println(soeren.getNavn() + "s forbrug: " + soeren.beregnForbrug());
+        System.out.println(rikke.getNavn() + "s forbrug: " + rikke.beregnForbrug()); 
+	
+        float forbrug1 = jernbanegade.afregnForbruger(soeren.getMaalerNr());
+        float forbrug2 = jernbanegade.afregnForbruger(rikke.getMaalerNr());
+		
+            System.out.println("Prisen for måler "+ soeren.getMaalerNr() +"'s forbrug:  DKK " + forbrug1);
+            System.out.println("Prisen for måler "+ rikke.getMaalerNr() +"'s forbrug:  DKK " + forbrug2);
     }
 }

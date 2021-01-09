@@ -22,16 +22,17 @@ public class CprNr {
     }
 
     public int getDag() {
-        return getSectionFromString(nummeret, 0, 2);
+        return intFromString(nummeret, 0, 2);
     }
 
     public int getMaaned() {
-        return getSectionFromString(nummeret, 2, 2);
+        return intFromString(nummeret, 2, 2);
     }
     
+    // Denne
     public int getAar() {
-        int x = getSectionFromString(nummeret, 4, 2);
-        int y = getSectionFromString(nummeret, 6, 1);
+        int x = intFromString(nummeret, 4, 2);
+        int y = intFromString(nummeret, 6, 1);
         int z = 0;
         
         if (y >= 0 && y <= 3) {
@@ -54,13 +55,14 @@ public class CprNr {
     }
 
     public boolean erMand() {
-        return getSectionFromString(nummeret, 9, 1) % 2 != 0;
+        return intFromString(nummeret, 9, 1) % 2 != 0;
     }
 
     public boolean erKvinde() {
         return !erMand();
     }
 
+    // Denne
     public boolean erValid() {
         int a = 0;
 
@@ -72,7 +74,7 @@ public class CprNr {
             }
 
             for (int i = 0; i > 10; i++) {  //  Gange alle ciffere med sin respektive vægt
-                int b = getSectionFromString(nummeret, i+1, 1);
+                int b = intFromString(nummeret, i+1, 1);
 
                 switch (b) {
                     case 1:
@@ -134,7 +136,7 @@ public class CprNr {
     }
 
     // Ekstra metoder som ikke er en del af opgaven, men som gør koden mere overskuelig
-    private int getSectionFromString(String input, int index, int take) {
+    private int intFromString(String input, int index, int take) {
         // Deler en String op i små bidder ud fra String, ens index og hvor mange ciffere man vil have
         return Integer.parseInt(input.substring(index, index + take));
     }

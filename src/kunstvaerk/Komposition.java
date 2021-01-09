@@ -14,4 +14,9 @@ public class Komposition extends Kunstvaerk {
         this.genre = genre;
         this.spilletid = spilletid;
     }
+
+    public String getGenre() {
+        return this.genre;
+    }
+
 }

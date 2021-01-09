@@ -17,5 +17,9 @@ public class Museum {
     public String getNavn() {
         return navn;
     }
+
+    public String getAdresse() {
+        return adresse;
+    }
     
 }

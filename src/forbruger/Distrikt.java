@@ -26,21 +26,10 @@ public class Distrikt {
     }
 
     float afregnForbruger(int etMaalerNr) {
-        if(etMaalerNr != 0) {
-            return forbrugere[antalForbrugere-1].beregnForbrug() * prisPrM3;
-        } else {
-            return -1;
-        }
-    }
-
-    void print() {
-        for (int i = 0; i <= antalForbrugere; i++) {
-            if (forbrugere[i] != null) {
-                System.out.println("Forbruger " + i + " hedder " + forbrugere[i].getNavn() + " bor i distriktet " + navn + " og har måleren med nr.: " + forbrugere[i].getMaalerNr());
-                System.out.println(forbrugere[i].getNavn() + "'s forbrug er på " + forbrugere[i].nyAflaesning + " M3 til en pris på " + prisPrM3 + " kr/M3, dvs. der skal betales " + afregnForbruger(forbrugere[i].maalerNr) + " kr");
-                System.out.println();
+        for (int i=0; i < antalForbrugere; i++)
+            if (etMaalerNr == forbrugere[i].getMaalerNr()) {
+                return (forbrugere[i].beregnForbrug()) * prisPrM3;
             }
-        }
+        return -1;
     }
-
 }

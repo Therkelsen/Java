@@ -24,7 +24,19 @@ public abstract class Kunstvaerk {
         }
     }
 
-    public int getOphavsmaend() {
-        return antalOphavsmaend;
+    public String getTitel() {
+        return this.titel;
+    }
+
+    public int getAar() {
+        return this.aar;
+    }
+
+    public Person[] getOphavsmaendObj() { // Objekt
+        return this.ophavsmaend;
+    }
+
+    public int getOphavsmaend() { // Antal
+        return this.antalOphavsmaend;
     }
 }

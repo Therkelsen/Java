@@ -28,7 +28,8 @@ public class StringTokenizer {
     public String getSource() {
         return tekst;
     }
-
+    
+    //Denne
     public boolean isDelimiter(char tegn) {
         for (int i = 0; i < delim.length(); i++) {
             if (tegn == delim.charAt(i)) {
@@ -37,7 +38,7 @@ public class StringTokenizer {
         }
         return false;
     }
-
+    //Denne
     public boolean hasMoreTokens(){
         for (int i = indeks; i < tekst.length(); i++) {
             if (!isDelimiter(tekst.charAt(i))) {
@@ -46,7 +47,7 @@ public class StringTokenizer {
         }
         return false;
     }
-
+    //Denne
     public String nextToken() {
         String token = "";
         

@@ -1,7 +1,10 @@
+
 package src.example;
 
-public class Class {
-    private int x;
+public abstract class Class {
+
+    protected int x;
+
 
     public Class() {
     }
@@ -14,3 +17,4 @@ public class Class {
         return x;
     }
 }
+

@@ -42,5 +42,9 @@ public class KunstvaerkSamling {
         }
         System.out.println(sumSider);
     }
+
+    public ArrayList<Kunstvaerk> getKunstvaerker() {
+        return this.kunstvaerker;
+    }
     
 }

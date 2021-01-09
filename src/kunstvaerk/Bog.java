@@ -15,6 +15,10 @@ public class Bog extends Kunstvaerk {
         this.antalSider = antalSider;
     }
     
+    public String getGenre() {
+        return this.genre;
+    }
+
     public int getAntalSider() {
         return this.antalSider;
     }

@@ -20,4 +20,12 @@ public class Maleri extends Kunstvaerk {
     public String getNavnPaaMuseum() {
         return this.museum.getNavn();
     }
+
+    public int getLaengde() {
+        return this.laengde;
+    }
+
+    public int getBredde() {
+        return this.bredde;
+    }
 }

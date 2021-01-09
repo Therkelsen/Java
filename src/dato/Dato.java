@@ -19,12 +19,12 @@ public class Dato {
         this.date = date;
     }
 
-    public Dato(int aYear, int aMonth, int aDay) {
-        year = aYear * 10000;
-        month = aMonth * 100;
-        day = aDay;
+    public Dato(int year, int month, int day) {
+        this.year = year * 10000;
+        this.month = month * 100;
+        this.day = day;
         
-        date = aYear*10000 + aMonth * 100 + aDay;
+        date = year*10000 + month * 100 + day;
     }
 
     public int getDato() {
@@ -97,24 +97,24 @@ public class Dato {
         System.out.println("New day: " + d);
     }
 
+    // Selektion
     public boolean leapYear() {    //  * insert year
-        if((year % 4 == 0 && year % 100 == 0) || year % 400 == 0) {   // * Must be divisible by 4 and 400 and not by 100
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {   // * Must be divisible by 4 and 400 and not by 100
             leap = true;
         } else {
             leap = false;
         }
         return leap;
-        
     }
 
     public boolean validDate() {
         day = getDay();
         month = getMonth();
         year = getYear();
-        if (day == 0 || month == 0) {
+        if (day == 0 || month == 0 || month > 12) {
             return false;
         }
-        if(date >= 17000301 && date <= 99991231 && month <= 12) { //  * After georgian calendar but before end of year 9999
+        if(date >= 17000301 && date <= 99991231) { //  * After georgian calendar but before end of year 9999
             if(month == 1 
             || month == 3 
             || month == 5 
@@ -122,22 +122,22 @@ public class Dato {
             || month == 8 
             || month == 10 
             || month == 12) {
-                if (day <= 31) {    //  * If month is long and day is greater than 31, its an invalid date
-                    valid = true;
-                } else {
+                if (day > 31) { //  * If month is long and day is greater than 31, its an invalid date
                     valid = false;
+                } else {
+                    valid = true;
                 }
             } else if (month == 2) {
-                if ((leap && day <= 29 || !leap && day <= 28)) {
-                    valid = true;
-                } else {
+                if ((leap && day > 29 || !leap && day > 28)) {
                     valid = false;
+                } else {
+                    valid = true;
                 }
             } else {
-                if (day <= 30) {
-                    valid = true;
-                } else {
+                if (day > 30) {
                     valid = false;
+                } else {
+                    valid = true;
                 }
             }
         } else {
@@ -146,6 +146,7 @@ public class Dato {
         return valid;
     }
 
+    // Erklæring, iteration og selektion
     public int dayInYear() {
         int dInMCum= 0;
         
