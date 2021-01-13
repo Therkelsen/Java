@@ -66,7 +66,7 @@ public class CprNr {
     public boolean erValid() {
         int a = 0;
 
-        if (nummeret.length() == 10) { //   Er 10 ciffere lang
+        if (nummeret.length() == 10) { //  Er 10 ciffere lang
             try {
                 Long.parseLong(nummeret);   //  Prøv at parse, hvis det er muligt er tallet numerisk
             } catch (NumberFormatException e) {

@@ -17,7 +17,7 @@ public class FjernvarmeMain {
         jernbanegade.setForbruger(rikke);
 
         System.out.println(soeren.getNavn() + "s forbrug: " + soeren.beregnForbrug());
-        System.out.println(rikke.getNavn() + "s forbrug: " + rikke.beregnForbrug()); 
+        System.out.println(rikke.getNavn() + "s forbrug: " + rikke.beregnForbrug());
 	
         float forbrug1 = jernbanegade.afregnForbruger(soeren.getMaalerNr());
         float forbrug2 = jernbanegade.afregnForbruger(rikke.getMaalerNr());

@@ -38,6 +38,7 @@ public class StringTokenizer {
         }
         return false;
     }
+
     //Denne
     public boolean hasMoreTokens(){
         for (int i = indeks; i < tekst.length(); i++) {
@@ -47,6 +48,7 @@ public class StringTokenizer {
         }
         return false;
     }
+
     //Denne
     public String nextToken() {
         String token = "";

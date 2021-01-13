@@ -18,18 +18,19 @@ public class Distrikt {
         antalForbrugere = 0;
     }
 
-    void setForbruger(Forbruger forbruger) {
+    public void setForbruger(Forbruger forbruger) {
         if (antalForbrugere < 200) {
             forbrugere[antalForbrugere] = forbruger;
             antalForbrugere++;
         }
     }
 
-    float afregnForbruger(int etMaalerNr) {
-        for (int i=0; i < antalForbrugere; i++)
+    public float afregnForbruger(int etMaalerNr) {
+        for (int i = 0; i < antalForbrugere; i++) {
             if (etMaalerNr == forbrugere[i].getMaalerNr()) {
                 return (forbrugere[i].beregnForbrug()) * prisPrM3;
             }
+        }
         return -1;
     }
 }
